@@ -7,7 +7,6 @@ flex-direction: column;
 align-items: center;
 background-color: teal;
 padding: 20px;
-width: 500px;
 
 label{
     margin: 0px 0px 15px 0px;
