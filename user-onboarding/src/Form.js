@@ -50,7 +50,9 @@ const ErrorMsg = styled.p `
   color: red;
 
 `;
-const Form = ()=>{
+//added props
+const Form = (props)=>{
+  
 //set initial form state
 const [formState, setFormState] = useState({
   name: "",
@@ -156,6 +158,7 @@ useEffect(() => {
           id="name"
           type="text"
           name="name"
+          data-cy="name"
           placeholder="Name" 
           value={formState.name}
           onChange={inputChange}
@@ -168,6 +171,7 @@ useEffect(() => {
           id="email"
           type="text"
           name="email"
+          data-cy="email"
           placeholder="Email" 
           value={formState.email}
           onChange={inputChange}
@@ -178,6 +182,7 @@ useEffect(() => {
         Password:
         <input 
         id="password" 
+        data-cy="password"
         type="password"
         placeholder="Password" 
         name="password" 
@@ -189,6 +194,7 @@ useEffect(() => {
         Terms of Service:
         <input 
         id="terms" 
+        data-cy="terms"
         type="checkbox" 
         name="terms" 
         checked={formState.terms}
@@ -197,7 +203,7 @@ useEffect(() => {
           <ErrorMsg>{errors.terms}</ErrorMsg>
         : null}
     </label>
-    <button disabled={buttonDisabled}>Submit</button>
+    <button data-cy="submit" disabled={buttonDisabled}>Submit</button>
     <pre>{JSON.stringify(post, null, 2)}</pre>
 </FormCont>
     )
